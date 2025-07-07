@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jessi Saúde</title>
+    <link rel="stylesheet" href="jessi_saude.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="teste3.png" alt="Femcare Logo">
+            <span>FEMCARE</span>
+            <h1>Dicas de Saúde e Beleza</h1>
+            <button class="back-button" onclick="window.location.href='perfil.html'">Voltar</button>
+    </header>
+
+    <div class="container">
+        <div class="tips-container"> <!-- Contêiner para as listas -->
+            <div class="tip-list"> <!-- Lista de Roupas Íntimas -->
+                <h2>Dicas de Roupas Íntimas</h2>
+                <ul>
+                    <li><i class="fas fa-tshirt"></i> Escolha tecidos suaves e confortáveis.</li>
+                    <li><i class="fas fa-palette"></i> Prefira cores neutras para o dia a dia.</li>
+                    <li><i class="fas fa-tshirt"></i> Roupas íntimas com elasticidade garantem conforto.</li>
+                    <li><i class="fas fa-tags"></i> Invista em peças de qualidade que durem mais.</li>
+                    <li><i class="fas fa-ruler"></i> Escolha o tamanho certo para evitar desconforto.</li>
+                    <li><i class="fas fa-briefcase"></i> Tenha diferentes estilos para diferentes ocasiões.</li>
+                    <li><i class="fas fa-water"></i> Lave suas roupas íntimas com água fria para preservar os tecidos.</li>
+                    <li><i class="fas fa-socks"></i> Use roupas que não marquem sob a roupa externa.</li>
+                    <li><i class="fas fa-arrow-up"></i> Evite costuras grossas que possam causar atrito.</li>
+                    <li><i class="fas fa-thermometer-half"></i> Opte por tecidos que permitam a respiração da pele.</li>
+                    <li><i class="fas fa-swatchbook"></i> Escolha peças que combinem com seu estilo pessoal.</li>
+                    <li><i class="fas fa-wash"></i> Siga sempre as instruções de lavagem na etiqueta.</li>
+                    <li><i class="fas fa-hand-sparkles"></i> Evite produtos químicos agressivos ao lavar.</li>
+                    <li><i class="fas fa-shield-alt"></i> Use roupas íntimas que ofereçam suporte adequado.</li>
+                    <li><i class="fas fa-cube"></i> Guarde suas peças de maneira organizada para evitar danos.</li>
+                    <li><i class="fas fa-sync-alt"></i> Troque suas roupas íntimas regularmente.</li>
+                </ul>
+            </div>
+
+            <div class="tip-list"> <!-- Lista de Cuidado da Pele -->
+                <h2>Cuidado da Pele</h2>
+                <ul>
+                    <li><i class="fas fa-water"></i> Beba bastante água para manter a pele hidratada.</li>
+                    <li><i class="fas fa-apple-alt"></i> Consuma uma dieta equilibrada rica em frutas e vegetais.</li>
+                    <li><i class="fas fa-clock"></i> Estabeleça horários regulares para aplicar produtos de cuidados com a pele.</li>
+                    <li><i class="fas fa-sun"></i> Use protetor solar todos os dias, mesmo em dias nublados.</li>
+                    <li><i class="fas fa-moon"></i> Não se esqueça de hidratar a pele antes de dormir.</li>
+                    <li><i class="fas fa-smile"></i> Faça pausas para relaxar e reduzir o estresse, que pode afetar a pele.</li>
+                    <li><i class="fas fa-thumbs-up"></i> Consulte um dermatologista para dicas personalizadas.</li>
+                    <li><i class="fas fa-flag-checkered"></i> Use produtos adequados para seu tipo de pele (oleosa, seca, mista).</li>
+                    <li><i class="fas fa-clipboard-list"></i> Mantenha um diário de cuidados com a pele para acompanhar os resultados.</li>
+                    <li><i class="fas fa-bath"></i> Faça esfoliação regularmente para remover células mortas.</li>
+                    <li><i class="fas fa-hand-holding-heart"></i> Invista em séruns e cremes anti-envelhecimento conforme necessário.</li>
+                    <li><i class="fas fa-spa"></i> Não se esqueça de cuidar da pele do pescoço e das mãos.</li>
+                    <li><i class="fas fa-bell"></i> Estar atento a mudanças na pele pode ajudar a identificar problemas precocemente.</li>
+                    <li><i class="fas fa-heart"></i> Pratique exercícios físicos, que ajudam na circulação e saúde da pele.</li>
+                    <li><i class="fas fa-spray-can"></i> Evite tocar o rosto com as mãos sujas para prevenir acne.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="icon-container">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-smile"></i>
+        <i class="fas fa-leaf"></i>
+        <i class="fas fa-shower"></i>
+    </div>
+
+    <div id="tipModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="tipText"></p>
+        </div>
+    </div>
+
+    <script src="jessi_saude.js"></script>
+</body>
+</html>

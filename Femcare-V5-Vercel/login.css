@@ -1,0 +1,360 @@
+/* Resetando margens e aplicando fontes padrões */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #fce4ec, #e1bee7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.356);
+    z-index: -1;
+}
+
+/* Container do Formulário de Login */
+.container {
+    background-color: rgba(233, 210, 243, 0.664); /* Fundo semi-transparente */
+    border-radius: 20px;
+    border-color: #8158a3;
+    border-style:solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-self: center;
+}
+
+/* Cabeçalho do Container */
+.container-header {
+    background-color: #8460a1;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 110px;
+    margin-left: 110px;
+    border-radius: 20px;
+    height: 25px;
+    text-align: center;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Ajustando o espaçamento entre os elementos */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+
+.form-group input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.form-group button {
+    background-color: #8460a1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 105px;
+    margin-right: 125px;
+    width: 150px;
+}
+
+.form-group button:hover {
+    background-color: #9784a7;
+}
+
+/* Link para Cadastro */
+p {
+    text-align: center;
+}
+
+p a {
+    color: #ad6fca;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Botão de Voltar */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #8460a1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #9784a7;
+}
+
+/* Estilos do chat */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-image: url('Ilustração5_1.png');
+    background-size: cover;  /* Isso vai fazer a imagem cobrir todo o círculo */
+    background-position: center;  /* Centraliza a imagem dentro do círculo */
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.chat-container.expanded {
+    width: 320px;
+    height: 420px;
+    border-radius: 10px;
+}
+
+.chat-header {
+    background-color: #f7aac600;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    height: 5px;
+}
+
+.chat-body {
+    background-color: white;
+    padding: 10px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+}
+
+.chat-response {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #E0BBE4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.chat-message.bot {
+    background-color: #E0E0E0;
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    background-color: #c390e2;
+    align-self: flex-end;
+}
+
+.chat-input-container {
+    display: flex;
+    margin-top: auto;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e46d6d;
+    border-radius: 5px;
+}
+
+.send-button {
+    background-color: #ee99b8;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.send-button:hover {
+    background-color: #db859d;
+}
+
+/* Para esconder o chat inicialmente */
+.hidden {
+    display: none;
+}
+
+.footerWrapper {
+    width: 100%;
+    height: 50px;
+    color: white;
+    background-color: #be5eba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+
+.container-header {
+    background-color: #8460a1;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 110px;
+    margin-left: 60px;
+    border-radius: 20px;
+    height: 25px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Ajustando o espaçamento entre os elementos */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.form-group input {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-left: 15px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.form-group button {
+    background-color: #8460a1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 55px;
+    margin-right: 5px;
+    width: 150px;
+}
+
+.form-group button:hover {
+    background-color: #9784a7;
+}
+
+/* Link para Cadastro */
+p {
+    text-align: center;
+}
+
+p a {
+    color: #ad6fca;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Botão de Voltar */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #8460a1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #9784a7;
+}
+
+/* Estilos do chat */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-image: url('Ilustração5_1.png');
+    background-size: cover;  /* Isso vai fazer a imagem cobrir todo o círculo */
+    background-position: center;  /* Centraliza a imagem dentro do círculo */
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.chat-container.expanded {
+    width: 320px;
+    height: 420px;
+    border-radius: 10px;
+}
+}

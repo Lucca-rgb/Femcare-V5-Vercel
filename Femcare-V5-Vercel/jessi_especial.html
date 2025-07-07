@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jessi Especial</title>
+    <link rel="stylesheet" href="jessi_especial.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>Ajuda para Vítimas de Violência</h1>
+        <button class="back-button" onclick="window.location.href='perfil.html'">Voltar</button>
+    </div>
+    <div class="container">
+        <h2>Formulário de Denúncia</h2>
+        <p>
+            Se você ou alguém que você conhece está em situação de violência, é importante denunciar. Preencha o formulário abaixo para enviar sua denúncia de forma anônima.
+        </p>
+        <form id="reportForm" onsubmit="handleSubmit(event)">
+            <label for="description">Descrição da Denúncia:</label>
+            <textarea id="description" required placeholder="Descreva a situação..."></textarea>
+
+            <label for="age">Idade (opcional):</label>
+            <input type="text" id="age" placeholder="Sua idade ou faixa etária" />
+
+            <label for="incidentDate">Data do Incidente:</label>
+            <input type="date" id="incidentDate" required />
+
+            <label for="violenceType">Tipo de Violência:</label>
+            <select id="violenceType" required>
+                <option value="">Selecione</option>
+                <option value="fisica">Física</option>
+                <option value="psicologica">Psicológica</option>
+                <option value="sexual">Sexual</option>
+                <option value="emocional">Emocional</option>
+                <option value="outra">Outra</option>
+            </select>
+
+            <label for="witnesses">Testemunhas (opcional):</label>
+            <input type="text" id="witnesses" placeholder="Mencione se houve testemunhas" />
+
+            <label for="evidence">Anexar Evidências (opcional):</label>
+            <input type="file" id="evidence" accept="image/*,application/pdf" />
+
+            <button type="submit">Enviar Denúncia</button>
+        </form>
+        <div id="confirmation" style="display:none;">
+            Denúncia enviada com sucesso! Obrigado por ajudar.
+        </div>
+    </div>
+
+    <script src="jessi_especial.js"></script>
+</body>
+</html>

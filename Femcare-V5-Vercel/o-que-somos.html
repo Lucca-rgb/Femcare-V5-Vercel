@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Que Somos</title>
+    <link rel="stylesheet" href="o-que-somos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="teste3.png" alt="Femcare Logo">
+            <span>FEMCARE</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html" class="active">INÍCIO</a></li>
+                <li><a href="noticias.html" >NOTÍCIAS</a></li>
+                <li><a href="forum.html">FÓRUM</a></li>
+                <li><a href="login.html" class="active">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main class="container">
+        <div class="title-section">
+            <p>Quem</p>
+            <h1>SOMOS?</h1>
+        </div>
+        <div class="content">
+            <p>
+                O <strong>FemCare</strong> foi criado para facilitar o acesso de mulheres de baixa renda a cuidados médicos de qualidade. Aqui, você encontra informações claras sobre hospitais e postos de saúde, guias simples de navegação e dicas personalizadas de saúde.
+            </p>
+
+            <p><strong>O que oferecemos:</strong></p>
+            <ul>
+                <li><strong>Informações Atualizadas:</strong> Detalhes sobre serviços médicos e horários de atendimento.</li>
+                <li><strong>Guias Simples:</strong> Como agendar consultas e quais documentos são necessários.</li>
+                <li><strong>Dicas de Saúde:</strong> Conteúdo personalizado para suas necessidades de saúde.</li>
+                <li><strong>Apoio:</strong> Suporte para esclarecer dúvidas e facilitar o acesso a serviços médicos.</li>
+            </ul>
+
+            <p>
+                No FemCare, acreditamos que todas as mulheres merecem cuidados de saúde dignos. Estamos aqui para garantir que você tenha todas as informações e recursos para cuidar de sua saúde com confiança.
+            </p>
+
+            <p><strong>Conheça a Jessi, sua assistente virtual!</strong></p>
+
+            <p>
+                A Jessi está disponível 24 horas para ajudar com questões como cadastro, agendamento, sintomas de menstruação, gravidez, entre outros. Ela oferece suporte técnico e dicas práticas de saúde, como aliviar cólicas menstruais ou enjoo na gravidez.
+            </p>
+            <p>
+                Com uma interface simples e amigável, Jessi ajuda você a navegar sem complicações em todos os processos relacionados à sua saúde.
+            </p>
+        </div>
+    </main>
+
+    <div class="footerWrapper">
+        <div style="margin-left: 6%; margin-right: 3%; text-align:center;">
+            <label class="LabelEu">© Feito por Lucca Torres |</label>
+            <label class="LabelProjetos">
+                <a href="https://github.com/Lucca-rgb" class="link" target="_blank">Outros Projetos</a>
+            </label>
+        </div>
+    </div>
+
+        <!-- Chat -->
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header" onclick="toggleChat()">Jessi</div>
+            <div class="chat-body hidden" id="chat-body">
+                <div id="chat-response" class="chat-response">
+                    <div class="chat-message bot">Olá! Como posso ajudar você hoje? 😊</div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="chat-input">
+                    <button class="send-button" onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="o-que-somos.js"></script>
+</body>
+</html>

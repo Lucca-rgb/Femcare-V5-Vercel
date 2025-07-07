@@ -1,0 +1,334 @@
+/* Estilo do corpo da página */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Camada de fundo semi-transparente */
+body::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, #f1e4e5, #cda2db);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125%;
+    z-index: -1;
+}
+
+/* Estilo do contêiner principal */
+.container {
+    background-color: rgba(233, 210, 243, 0.664);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 680px;
+    padding: 15px;
+    box-sizing: border-box;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-style: solid;
+    border-color: #6a5986;
+    margin-top: 200px;
+}
+
+/* Estilo do cabeçalho do contêiner */
+.container-header {
+    background-color: #6a5986;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilo dos grupos de formulário */
+.form-group {
+    margin-bottom: 10px;
+}
+
+/* Estilo dos rótulos do formulário */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilo dos campos de entrada e seleção */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* Estilo do botão do formulário */
+.form-group button {
+    background-color: #6a5986;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Efeito de hover do botão do formulário */
+.form-group button:hover {
+    background-color: #c9b8d8;
+}
+
+/* Estilo do botão de voltar */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #6a5986;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.back-button:hover {
+    background-color: #c9b8d8;
+}
+
+.footerWrapper {
+    display: block;
+    width: 100%;
+    height: 18px;
+    position: fixed; /* Fixa o rodapé no fundo da tela */
+    bottom: 0; /* Garante que ficará no fundo da página */
+    left: 0;
+    background-color: #be5eba;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilos do chat */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-image: url('Ilustração5_1.png');
+    background-size: cover;
+    background-position: center;
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.chat-container.expanded {
+    width: 320px;
+    height: 420px;
+    border-radius: 10px;
+}
+
+.chat-header {
+    background-color: #f7aac600;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    height: 5px;
+}
+
+.chat-body {
+    background-color: white;
+    padding: 10px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+}
+
+.chat-response {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #E0BBE4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.chat-message.bot {
+    background-color: #E0E0E0;
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    background-color: #c390e2;
+    align-self: flex-end;
+}
+
+.chat-input-container {
+    display: flex;
+    margin-top: auto;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e46d6d;
+    border-radius: 5px;
+}
+
+.send-button {
+    background-color: #ee99b8;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.send-button:hover {
+    background-color: #db859d;
+}
+
+/* Para esconder o chat inicialmente */
+.hidden {
+    display: none;
+}
+
+/* Popup Política de Privacidade */
+.privacy-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.privacy-content {
+  background: white;
+  padding: 30px;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  text-align: left;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.popup-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.popup-buttons button:first-child {
+  background-color: #6a5986;
+  color: white;
+}
+.popup-buttons button:last-child {
+  background-color: #e57373;
+  color: white;
+}
+
+/* Media Queries para Responsividade */
+
+/* Quando a tela for menor que 768px (dispositivos móveis ou tablets) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .form-group button {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .back-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .chat-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .chat-container.expanded {
+        width: 250px;
+        height: 350px;
+    }
+
+    .chat-body {
+        height: 250px;
+    }
+}
+
+/* Quando a tela for menor que 480px (dispositivos muito pequenos, como smartphones em modo retrato) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .form-group button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .chat-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .chat-container.expanded {
+        width: 200px;
+        height: 300px;
+    }
+
+    .chat-body {
+        height: 220px;
+    }
+}

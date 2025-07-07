@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a visualização responsiva -->
+    <title>Agendamento</title> <!-- Título da página -->
+    <link rel="stylesheet" href="agendamento.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+
+    <!-- Botão para voltar à página de login -->
+    <button class="back-button" onclick="window.location.href='login.html'">Voltar</button>
+
+    <!-- Contêiner principal do formulário -->
+    <div class="container">
+        <div class="container-header">Agendamento</div> <!-- Cabeçalho do formulário -->
+        <form id="appointment-form"> <!-- Formulário de agendamento -->
+            <div class="form-group">
+                <label for="cep">CEP:</label> <!-- Rótulo do campo CEP -->
+                <input type="text" id="cep" name="cep" required> <!-- Campo de entrada para CEP -->
+            </div>
+            <div class="form-group">
+                <label for="especializacao">Especialização:</label> <!-- Rótulo do campo especialização -->
+                <select id="especializacao" name="especializacao" required> <!-- Campo de seleção para especialização -->
+                    <option value="" disabled selected>Selecione uma especialização</option> <!-- Opção padrão -->
+                    <option value="ginecologia">Ginecologia</option>
+                    <option value="obstetricia">Obstetrícia</option>
+                    <option value="endocrinologia-reprodutiva">Endocrinologia Reprodutiva</option>
+                    <option value="oncologia-ginecologica">Oncologia Ginecológica</option>
+                    <option value="mastologia">Mastologia</option>
+                    <option value="urologia-feminina">Urologia Feminina</option>
+                    <option value="medicina-preventiva">Medicina Preventiva</option>
+                    <option value="dermatologista">Dermatologista</option>
+                    <option value="psicologia">Psicologia</option>
+                    <option value="cirurgia-plastica">Cirurgia Plástica (CRS)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label> <!-- Rótulo do campo estado -->
+                <select id="estado" onchange="filterUBS()"> <!-- Campo de seleção para estado -->
+                    <option value="" disabled selected>Selecione um estado</option> <!-- Opção padrão -->
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PR">Paraná</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ubs">UBS:</label> <!-- Rótulo do campo UBS -->
+                <select id="ubs"> <!-- Campo de seleção para UBS -->
+                    <option value="" disabled selected>Selecione uma UBS</option> <!-- Opção padrão -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mes">Mês:</label> <!-- Rótulo do campo mês -->
+                <select id="mes" name="mes" required> <!-- Campo de seleção para mês -->
+                    <option value="" disabled selected>Selecione um mês</option> <!-- Opção padrão -->
+                    <option value="01">Janeiro</option>
+                    <option value="02">Fevereiro</option>
+                    <option value="03">Março</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Maio</option>
+                    <option value="06">Junho</option>
+                    <option value="07">Julho</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ano">Ano:</label> <!-- Rótulo do campo ano -->
+                <select id="ano" name="ano" required> <!-- Campo de seleção para ano -->
+                    <option value="" disabled selected>Selecione um ano</option> <!-- Opção padrão -->
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="datas-disponiveis">Datas Disponíveis:</label> <!-- Rótulo do campo datas disponíveis -->
+                <select id="datas-disponiveis" name="datas-disponiveis" required> <!-- Campo de seleção para datas -->
+                    <option value="" disabled selected>Selecione uma data</option> <!-- Opção padrão -->
+                    <!-- Opções de datas -->
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+            </div>            
+            <div class="form-group">
+                <label for="horarios">Horários:</label> <!-- Rótulo do campo horários -->
+                <select id="horarios" name="horarios" required> <!-- Campo de seleção para horários -->
+                    <option value="" disabled selected>Selecione um horário</option> <!-- Opção padrão -->
+                    <option value="07:00">07:00</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="confirmAgendamento()">Confirmar agendamento</button> <!-- Botão para confirmar o agendamento -->
+            </div>
+        </form>
+    </div>
+
+    <!-- Contêiner para o chat -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" onclick="toggleChat()">Jessi</div> <!-- Cabeçalho do chat -->
+        <div class="chat-body hidden" id="chat-body"> <!-- Corpo do chat, inicialmente oculto -->
+            <div id="chat-response" class="chat-response">
+                <div class="chat-message bot">Olá! Como posso ajudar você hoje? 😊</div> <!-- Mensagem inicial do bot -->
+            </div>
+            <div class="chat-input-container"> <!-- Contêiner para a entrada de chat -->
+                <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="chat-input"> <!-- Campo de entrada de texto -->
+                <button class="send-button" onclick="sendMessage()">Enviar</button> <!-- Botão para enviar a mensagem -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footerWrapper">
+        <div style="margin-left: 3%; margin-right: 3%">
+            <label class="LabelEu">© Feito por Lucca Torres 2025 |</label>
+            <label class="LabelProjetos">
+                <a href="https://github.com/Lucca-rgb" class="link" target="_blank">Outros Projetos</a>
+            </label>
+        </div>
+    </div>
+
+    <!-- Política de Privacidade Pop-up -->
+  <div id="privacy-popup" class="privacy-popup">
+    <div class="privacy-content">
+      <h2>Política de Privacidade e Uso de Cookies – FemCare</h2>
+        
+      <h3>Última atualização: 07/07/2025</h3>
+
+      <h3>Compromisso com a Privacidade</h3>
+
+      <p>Nós, da FemCare, respeitamos e protegemos a sua privacidade. Esta Política descreve como coletamos, utilizamos e armazenamos seus dados pessoais no âmbito do nosso site, conforme previsto na Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018).</p>
+
+      <p>Ao utilizar nossos serviços ou preencher formulários em nosso site, você declara estar ciente e de acordo com as práticas descritas nesta política.</p>
+
+      <h3>Quais dados coletamos</h3>
+
+      <p>O FemCare armazena dados que você insere apenas no seu dispositivo, utilizando o recurso de local storage do navegador. Não mantemos banco de dados externo, nem coletamos ou analisamos seus dados pessoalmente.</p>
+
+      <p>Os dados armazenados localmente podem incluir informações como nome, e-mail, dados de agendamento e demais informações que você voluntariamente fornecer.</p>
+
+      <h3>Finalidade da coleta dos dados</h3>
+
+      <p>Os dados armazenados localmente no seu navegador têm a finalidade de:</p>
+
+      <p>Facilitar o uso do site, mantendo informações para agilizar processos, como agendamentos;</p>
+
+      <p>Preservar preferências e histórico temporário, para uma melhor experiência de navegação.</p>
+
+      <p>Nenhum dado é enviado para servidores ou compartilhado externamente.</p>
+
+      <h3>Consentimento</h3>
+
+      <p>Ao utilizar a FemCare, você consente que seus dados fiquem armazenados localmente em seu dispositivo, de forma temporária e privada.</p>
+
+      <h3>Compartilhamento de dados</h3>
+
+      <p>Não há compartilhamento de dados com terceiros, pois não armazenamos dados em servidores ou bancos de dados externos.</p>
+
+      <h3>Segurança das informações</h3>
+
+      <p>Como os dados permanecem apenas no seu dispositivo, a segurança depende das medidas de proteção do seu próprio aparelho e navegador.</p>
+
+      <h3>Armazenamento e tempo de retenção</h3>
+
+      <p>Os dados permanecem armazenados localmente no seu navegador enquanto você não os remover ou limpar os dados do site no navegador.</p>
+
+      <h3>Seus direitos como titular de dados</h3>
+
+      <p>Você tem total controle sobre os dados armazenados localmente, podendo acessá-los, modificá-los ou excluí-los diretamente no seu navegador.</p>
+
+      <h3>Uso de Cookies</h3>
+
+      <p>O FemCare utiliza cookies essenciais para o funcionamento e cookies funcionais para melhorar a experiência do usuário. Não utilizamos cookies para rastreamento externo ou análise de dados pessoais.</p>
+
+      <h3>Alterações nesta política</h3>
+
+      <p>Podemos atualizar esta Política de Privacidade para adequar o texto a novas funcionalidades ou legislação. A data da última atualização estará sempre no topo da página.</p>
+
+      <h3>Fale conosco</h3>
+
+      <p>Se tiver dúvidas sobre esta política ou sobre o funcionamento da FemCare, entre em contato:</p>
+
+      <p>lucca.torrez300@outlook.com</p>
+
+      <div class="popup-buttons">
+        <button onclick="acceptPrivacy()">Aceito</button>
+        <button onclick="declinePrivacy()">Não aceito</button>
+      </div>
+    </div>
+  </div>
+
+    <script src="agendamento.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perfil</title>
+    <link rel="stylesheet" href="perfil.css" />
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <header class="navbar d-flex justify-content-between align-items-center px-5">
+        <div class="logo d-flex align-items-center fw-bold fs-5">
+            <img src="teste3.png" alt="Femcare Logo" class="me-2">
+            <span>FEMCARE</span>
+        </div>
+        <nav>
+            <ul class="d-flex list-unstyled mb-0">
+                <li class="me-3"><a href="o-que-somos.html" class="btn" style="color: #c451d3;">QUEM SOMOS</a></li>
+                <li class="me-3"><a href="forum.html" class="btn">FÓRUM</a></li>
+                <li class="me-3"><a href="antesnoticias.html" class="btn">NOTÍCIAS</a></li>
+                <li><a href="leis.html" class="btn">LEIS</a></li>
+                <li><button class="help-button" onclick="openHelp()">AJUDA</button></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="login text-decoration-none">LOGIN</a>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="main-container">
+        <div class="section-title">
+            <button class="tab-button active">Dados Pessoais</button>
+        </div>
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="Perfil Mulher.jpeg" alt="Foto do Perfil" />
+            </div>
+            <div class="profile-info">
+                <div class="info-group">
+                    <h3>Nome Completo</h3>
+                    <p>Bruna Luiza Ana</p>
+                </div>
+                <div class="info-group">
+                    <h3>Idade</h3>
+                    <p>22</p>
+                </div>
+                <div class="info-group">
+                    <h3>CPF</h3>
+                    <p>123.456.789-00</p>
+                </div>
+                <div class="info-group">
+                    <h3>CNS</h3>
+                    <p>00987654321011</p>
+                </div>
+                <div class="info-group">
+                    <h3>E-mail</h3>
+                    <p>karioca@exemplo.com</p>
+                </div>
+                <div class="info-group">
+                    <h3>WhatsApp</h3>
+                    <p>(11) 91234-5678</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat -->
+        <div class="chat-container" id="chat-container" onclick="toggleChat()">
+            <div class="chat-header">Jessi</div>
+            <div class="chat-body hidden" id="chat-body">
+                <div id="chat-response" class="chat-response">
+                    <div class="chat-message bot">
+                        Olá! Como posso ajudar você hoje? 😊
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input
+                        type="text"
+                        id="chat-input"
+                        placeholder="Digite sua mensagem..."
+                        class="chat-input"
+                        onkeydown="if(event.key==='Enter'){sendMessage();}"
+                    />
+                    <button class="send-button" onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Ajuda -->
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeHelp()">&times;</span>
+                <h2>Digite a Palavra-Passe</h2>
+                <input type="text" id="password-input" placeholder="Palavra-passe" />
+                <button onclick="checkPassword()">Enviar</button>
+            </div>
+        </div>
+    </main>
+    <script src="perfil.js"></script>
+</body>
+</html>

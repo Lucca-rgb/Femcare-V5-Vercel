@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Agendamento</title>
+    <link rel="stylesheet" href="tela-agendamento.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <div class="header">
+        <div class="menu-container">
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+            <div class="menu-dropdown" id="menu-dropdown">
+                <a href="index.html">Menu</a>
+                <a href="o-que-somos.html">O que somos</a>
+                <a href="noticias.html">Notícias</a>
+            </div>
+        </div>
+        <div class="header-title">Minha Agenda</div>
+        <button class="profile" onclick="window.location.href='perfil.html'"></button>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="content">
+        <!-- Calendário -->
+        <div class="calendar">
+            <div class="calendar-header">
+                <button onclick="changeMonth(-1)">&#9664;</button>
+                <div id="monthYear"></div>
+                <button onclick="changeMonth(1)">&#9654;</button>
+            </div>
+            <div class="calendar-body" id="calendar-body"></div>
+        </div>
+
+        <!-- Botão para Novo Agendamento -->
+        <button class="new-appointment-button" onclick="window.location.href='agendamento.html'">Novos Agendamentos</button>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" onclick="toggleChat()">Jessi</div>
+        <div class="chat-body hidden" id="chat-body">
+            <div id="chat-response" class="chat-response">
+                <div class="chat-message bot">Olá! Como posso ajudar você hoje? 😊</div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="chat-input">
+                <button class="send-button" onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="tela-agendamento.js"></script>
+</body>
+</html>

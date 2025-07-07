@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linha do Tempo Interativa</title>
+    <link rel="stylesheet" href="leis.css" />
+</head>
+<body>
+
+    <a href="index.html" class="back-button">Voltar</a>
+    
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Linha do Tempo Interativa</h1>
+        <p>Clique nos anos para mais informações</p>
+    </header>
+
+    <!-- Linha do Tempo -->
+    <main>
+        <div class="timeline">
+            <!-- Exemplo de Ponto da Linha do Tempo -->
+            <div class="year-point" data-year="Século XIX" data-info="
+            • 1879: Acesso ao ensino superior para mulheres cis.">
+                <span>Século XIX</span>
+            </div>
+            <div class="year-point" data-year="Século XX" data-info="
+            • 1932: Direito ao voto para mulheres cis.
+            • 1943: Licença-maternidade e proteção trabalhista garantidas pela CLT.
+            • 1962: Estatuto da Mulher Casada elimina a autorização do marido para trabalho e patrimônio próprio.
+            • 1977: Lei do Divórcio permite a dissolução de casamentos.">
+                <span>Século XX</span>
+            </div>
+            <div class="year-point" data-year="Décadas de 1980 e 1990" data-info="
+            • 1988: Constituição Federal garante igualdade de gênero.
+            • 1990: Criação do SUS, com acesso à saúde para mulheres cis e trans.
+            • 1999: Acesso a métodos contraceptivos e cuidados reprodutivos pelo SUS.">
+                <span>Décadas de 1980 e 1990</span>
+            </div>
+            <div class="year-point" data-year="Anos 2000" data-info="
+            • 2002: Código Civil elimina a “chefia masculina” no casamento.
+            • 2006: Lei Maria da Penha combate a violência doméstica (cis e trans).">
+                <span>Anos 2000</span>
+            </div>
+            <div class="year-point" data-year="Anos 2010" data-info="
+            • 2013: SUS garante atendimento integral a vítimas de violência sexual.
+            • 2015: Lei do Feminicídio criminaliza o assassinato de mulheres por gênero.
+            • 2016: Decreto regulamenta o uso do nome social em serviços públicos.
+            • 2018: STF autoriza alteração de nome e gênero sem cirurgia ou decisão judicial.">
+                <span>Anos 2010</span>
+            </div>
+            <div class="year-point" data-year="Anos 2020" data-info="
+            • 2021: Mulheres trans reconhecidas como beneficiárias plenas da Lei Maria da Penha.
+            • 2022: Inclusão de mulheres trans nas cotas de gênero para eleições.
+            • 2023: Políticas públicas para enfrentar o feminicídio e a mortalidade materna, incluindo mulheres cis e trans.">
+                <span>Anos 2020</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pop-up -->
+    <div id="popup" class="hidden">
+        <div class="popup-content">
+            <span id="close-popup">&times;</span>
+            <h2 id="popup-year">Ano</h2>
+            <p id="popup-info">Informações</p>
+        </div>
+    </div>
+
+    <script src="leis.js"></script>
+</body>
+</html>

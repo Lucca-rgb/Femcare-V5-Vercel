@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - FEMCARE</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="cadastro.css" />
+</head>
+<body>
+  <header class="navbar d-flex justify-content-between align-items-center px-5">
+    <div class="logo d-flex align-items-center fw-bold fs-5">
+        <img src="teste3.png" alt="Femcare Logo" class="me-2">
+        <span>FEMCARE</span>
+    </div>
+    <nav>
+        <ul class="d-flex list-unstyled mb-0">
+            <li class="me-3"><a href="o-que-somos.html" class="btn" style="color: #c451d3;">QUEM SOMOS</a></li>
+            <li class="me-3"><a href="forum.html" class="btn">FÓRUM</a></li>
+            <li class="me-3"><a href="antesnoticias.html" class="btn">NOTÍCIAS</a></li>
+            <li><a href="leis.html" class="btn">LEIS</a></li>
+        </ul>
+    </nav>
+    <a href="login.html" class="login text-decoration-none">LOGIN</a>
+  </header>
+
+  <main class="main-content container">
+    <div class="form-container mx-auto p-4">
+      <h2>CADASTRO</h2>
+      <form id="registrationForm" class="form d-flex flex-column gap-3">
+        <input type="text" id="name" class="input-field form-control" placeholder="Nome" />
+        <input type="text" id="cpf" class="input-field form-control" placeholder="CPF" />
+        <input type="text" id="sus" class="input-field form-control" placeholder="Cartão do SUS" />
+        <input type="email" id="email" class="input-field form-control" placeholder="E‑mail" />
+        <input type="text" id="cep" class="input-field form-control" placeholder="CEP" />
+        <input type="text" id="numero" class="input-field form-control" placeholder="Número Celular" />
+        <input type="password" id="password" class="input-field form-control" placeholder="Senha" />
+        <input type="password" id="confirm-password" class="input-field form-control" placeholder="Confirmar Senha" />
+        <input type="text" id="keyword" class="input-field form-control" placeholder="Palavra Chave" />
+        <button type="submit" class="btn btn-primary">ENVIAR</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Chat -->
+  <div class="chat-container" id="chat-container">
+    <div class="chat-header" onclick="toggleChat()">Jessi</div>
+    <div class="chat-body hidden" id="chat-body">
+      <div id="chat-response" class="chat-response">
+        <div class="chat-message bot">Olá! Como posso ajudar você hoje? 😊</div>
+      </div>
+      <div class="chat-input-container">
+        <input type="text" id="chat-input" class="chat-input" placeholder="Digite sua mensagem..." />
+        <button class="send-button" onclick="sendMessage()">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Política de Privacidade Pop-up -->
+  <div id="privacy-popup" class="privacy-popup">
+    <div class="privacy-content">
+      <h4>Política de Privacidade e Uso de Cookies – FemCare</h4>
+        
+      <h6>Última atualização: 07/07/2025</h6>
+
+      <h6>Compromisso com a Privacidade</h6>
+
+      <p>Nós, da FemCare, respeitamos e protegemos a sua privacidade. Esta Política descreve como coletamos, utilizamos e armazenamos seus dados pessoais no âmbito do nosso site, conforme previsto na Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018).</p>
+
+      <p>Ao utilizar nossos serviços ou preencher formulários em nosso site, você declara estar ciente e de acordo com as práticas descritas nesta política.</p>
+
+      <h6>Quais dados coletamos</h6>
+
+      <p>O FemCare armazena dados que você insere apenas no seu dispositivo, utilizando o recurso de local storage do navegador. Não mantemos banco de dados externo, nem coletamos ou analisamos seus dados pessoalmente.</p>
+
+      <p>Os dados armazenados localmente podem incluir informações como nome, e-mail, dados de agendamento e demais informações que você voluntariamente fornecer.</p>
+
+      <h6>Finalidade da coleta dos dados</h6>
+
+      <p>Os dados armazenados localmente no seu navegador têm a finalidade de:</p>
+
+      <p>Facilitar o uso do site, mantendo informações para agilizar processos, como agendamentos;</p>
+
+      <p>Preservar preferências e histórico temporário, para uma melhor experiência de navegação.</p>
+
+      <p>Nenhum dado é enviado para servidores ou compartilhado externamente.</p>
+
+      <h6>Consentimento</h6>
+
+      <p>Ao utilizar a FemCare, você consente que seus dados fiquem armazenados localmente em seu dispositivo, de forma temporária e privada.</p>
+
+      <h6>Compartilhamento de dados</h6>
+
+      <p>Não há compartilhamento de dados com terceiros, pois não armazenamos dados em servidores ou bancos de dados externos.</p>
+
+      <h6>Segurança das informações</h6>
+
+      <p>Como os dados permanecem apenas no seu dispositivo, a segurança depende das medidas de proteção do seu próprio aparelho e navegador.</p>
+
+      <h6>Armazenamento e tempo de retenção</h6>
+
+      <p>Os dados permanecem armazenados localmente no seu navegador enquanto você não os remover ou limpar os dados do site no navegador.</p>
+
+      <h6>Seus direitos como titular de dados</h6>
+
+      <p>Você tem total controle sobre os dados armazenados localmente, podendo acessá-los, modificá-los ou excluí-los diretamente no seu navegador.</p>
+
+      <h6>Uso de Cookies</h6>
+
+      <p>O FemCare utiliza cookies essenciais para o funcionamento e cookies funcionais para melhorar a experiência do usuário. Não utilizamos cookies para rastreamento externo ou análise de dados pessoais.</p>
+
+      <h6>Alterações nesta política</h6>
+
+      <p>Podemos atualizar esta Política de Privacidade para adequar o texto a novas funcionalidades ou legislação. A data da última atualização estará sempre no topo da página.</p>
+
+      <h6>Fale conosco</h6>
+
+      <p>Se tiver dúvidas sobre esta política ou sobre o funcionamento da FemCare, entre em contato:</p>
+
+      <p>lucca.torrez300@outlook.com</p>
+
+      <div class="popup-buttons">
+        <button onclick="acceptPrivacy()">Aceito</button>
+        <button onclick="declinePrivacy()">Não aceito</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cadastro.js"></script>
+</body>
+</html>

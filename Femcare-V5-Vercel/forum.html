@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fórum Femcare</title>
+    <link rel="stylesheet" href="forum.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="teste3.png" alt="Femcare Logo" />
+            <span>FEMCARE</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="o-que-somos.html">QUEM SOMOS</a></li>
+                <li><a href="forum.html" class="btn active">FÓRUM</a></li>
+                <li><a href="antesnoticias.html" class="btn">NOTÍCIAS</a></li>
+                <li><a href="leis.html" class="btn">LEIS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <button id="newTopic">Novo Tópico</button>
+
+            <!-- Formulário para novo post -->
+            <div id="new-post-form" style="display: none;">
+                <h2>Novo Tópico</h2>
+                <input type="text" id="post-title" placeholder="Título do tópico" />
+                <input type="text" id="post-author" placeholder="Seu nome" />
+                <textarea id="post-content" placeholder="Descrição da postagem"></textarea>
+                <button id="submit-post">Publicar</button>
+                <button onclick="hideNewPostForm()">Cancelar</button>
+            </div>
+
+            <div id="forum-container">
+                <!-- Os posts serão inseridos aqui via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script defer src="forum.js"></script>
+</body>
+
+</html>

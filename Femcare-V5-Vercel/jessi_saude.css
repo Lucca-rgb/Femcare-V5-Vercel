@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 120vh; /* Ajusta a altura para a altura da tela */
+    background: linear-gradient(to right, #fce4ec, #e1bee7);
+}
+
+.header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #070707;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 60px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.header h1 {
+    margin-left: 620px;
+    font-size: 20px;
+    background-color: #8460a1;
+    background-size: cover;
+    width: 370px;
+    text-align: center;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.back-button {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    width: 100px;
+    font-size: 15px;
+    background-color: #8460a1;
+    border: none;
+    text-align: center;
+    height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.back-button:hover {
+    background-color: #6c5986; /* Tom mais escuro ao passar o mouse */
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    font-size: 46px;
+}
+
+.container {
+    max-width: 1200px; /* Aumenta a largura máxima para melhor responsividade */
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0); /* Fundo branco com leve transparência */
+    border-radius: 10px;
+}
+
+h2 {
+    color: #6a0dad; /* Lilás */
+    margin-bottom: 10px;
+}
+
+p, ul {
+    color: #555; /* Texto escuro para melhor legibilidade */
+}
+
+ul {
+    padding-left: 20px; /* Espaçamento para a lista */
+}
+
+li {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+}
+
+.tips-container {
+    display: flex; /* Alinha os itens lado a lado */
+    justify-content: space-between; /* Espaço igual entre as listas */
+    margin: 20px 0; /* Margem para separar a seção das listas */
+    flex-wrap: wrap; /* Garante que as listas se ajustem em telas menores */
+}
+
+.tip-list {
+    flex: 1;
+    margin: 10px; /* Ajusta a margem para separar as listas */
+    background-color: #ffffff00;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tip-list h2 {
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+.tip-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tip-list li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.tip-list li i {
+    margin-right: 10px;
+}
+
+.icon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.icon-container i {
+    font-size: 30px;
+    color: #6a0dad; /* Lilás */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed; /* Fica na tela toda */
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Adiciona rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+    color: black;
+}
+
+.modal-content {
+    background-color: rgb(235, 197, 224);
+    margin: 15% auto; /* Margens automáticas para centralizar */
+    padding: 20px;
+    width: 80%; /* Largura do modal */
+    border-radius: 30px; /* Cantos arredondados */
+    color: black;
+    font-weight: bold;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right; /* Alinha à direita */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Altera a cor ao passar o mouse */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tips-container {
+        flex-direction: column; /* Em telas menores, empilha as listas */
+        margin: 20px 0;
+    }
+
+    .tip-list {
+        flex: none; /* Remove a flexibilidade e faz as listas ocuparem a largura total */
+        margin: 10px 0; /* Ajusta a margem */
+    }
+
+    .icon-container {
+        bottom: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px;
+    }
+
+    .back-button {
+        padding: 8px 12px;
+    }
+
+    .icon-container i {
+        font-size: 25px;
+        padding: 8px;
+    }
+}

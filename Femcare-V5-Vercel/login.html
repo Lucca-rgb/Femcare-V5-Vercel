@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    
+    <!-- Botão de Voltar -->
+    <a href="index.html" class="back-button">Voltar</a>
+
+    <!-- Container do Login -->
+    <div class="container">
+        <div class="container-header">Login:</div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="confirmAgendamento()">Entrar</button>
+            </div>
+        </form>
+        <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" onclick="toggleChat()">Jessi</div>
+        <div class="chat-body hidden" id="chat-body">
+            <div id="chat-response" class="chat-response">
+                <div class="chat-message bot">Olá! Como posso ajudar você hoje? 😊</div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="chat-input">
+                <button class="send-button" onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footerWrapper">
+        <div style="margin-left: 3%; margin-right: 3%">
+            <label class="LabelEu">© Feito por Lucca Torres 2025 |</label>
+            <label class="LabelProjetos">
+                <a href="https://github.com/Lucca-rgb" class="link" target="_blank">Outros Projetos</a>
+            </label>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

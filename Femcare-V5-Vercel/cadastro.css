@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #fde5eb, #d4c2f0);
+  min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #000000;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin-right: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar nav ul li a.active {
+    color: #9c27b0;
+}
+
+.login {
+    background-color: #fce4ec;
+    border: none;
+    color:#9c27b0;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login:hover {
+    background-color: #e1bee7;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.form-container {
+  background-color: rgba(233, 210, 243, 0.8);
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #6a5986;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  background-color: #6a5986;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px 20px 0 0;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+.input-field:focus {
+  background-color: #c1b0e2;
+}
+
+button.btn-primary {
+  background-color: #6a5986;
+  border: none;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+button.btn-primary:hover {
+  background-color: #554475;
+}
+
+/* Chat */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url('Ilustração5_1.png');
+  background-size: cover;
+  background-position: center;
+  transition: width 0.3s, height 0.3s, border-radius 0.3s;
+  cursor: pointer;
+}
+.chat-container.expanded {
+  width: 320px;
+  height: 420px;
+  border-radius: 10px;
+  right: 2%;
+  bottom: 2%;
+}
+
+.chat-header {
+  background-color: #f7aac600;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-body {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+}
+.chat-response {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #E0BBE4;
+  padding: 8px;
+  border-radius: 5px;
+}
+.chat-input-container {
+  display: flex;
+  margin-top: auto;
+}
+.chat-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #e46d6d;
+  border-radius: 5px;
+}
+.send-button {
+  background-color: #ee99b8;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: white;
+}
+.send-button:hover {
+  background-color: #db859d;
+}
+.hidden {
+  display: none;
+}
+
+/* Popup Política de Privacidade */
+.privacy-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.privacy-content {
+  background: white;
+  padding: 30px;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  text-align: left;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.popup-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.popup-buttons button:first-child {
+  background-color: #6a5986;
+  color: white;
+}
+.popup-buttons button:last-child {
+  background-color: #e57373;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+  .navbar .logo {
+      margin-left: -200px;
+  }
+
+  .navbar nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 1rem;
+      margin-left: -180px;
+      gap: -3px;
+  }
+
+  .navbar a {
+      font-size: 1rem; 
+  }
+
+  .login {
+      font-size: 14px;
+      border: none;
+      background: none;
+      margin-left: -280px;
+  }
+
+  .form-container {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+  .chat-container {
+    width: 100px;
+    height: 100px;
+  }
+  .chat-container.expanded {
+    width: 90%;
+    height: 400px;
+  }
+}

@@ -1,0 +1,293 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo geral do corpo do código */
+body {
+    background: linear-gradient(to right, #fce4ec, #e1bee7); /* Fundo da página com gradiente suave de rosa para roxo */
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5; /* Espaçamento entre as linhas */
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinha itens verticalmente */
+    padding: 10px 5%;
+    background: rgba(255, 255, 255, 0); /* Deixa o fundo transparente */
+    border-bottom: 1px solid #181818;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* Estilos do logo */
+.logo {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+/* Imagem do logo */
+.logo img {
+    width: 30px; /* Largura fixa */
+    height: 30px; /* Altura fixa */
+    margin-right: 8px;
+}
+
+/* Lista de navegação */
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+/* Itens da navegação */
+.navbar nav ul li {
+    margin-right: 20px; /* Espaço entre itens */
+}
+
+/* Links da navegação */
+.navbar nav ul li a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #333;
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Link ativo */
+.navbar nav ul li a.active {
+    color: #9c27b0; /* Cor roxa para link ativo */
+}
+
+/* Conteúdo principal */
+main {
+    display: flex;
+    margin: 20px;
+}
+
+/* Barra lateral */
+aside {
+    width: 25%; /* Largura fixa */
+    background: white; /* Fundo branco */
+    padding: 15px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Deixa com uma sombra sutil */
+}
+
+/* Seção principal */
+section {
+    flex-grow: 1; /* Ele cresce para ocupar espaço disponível */
+    margin-left: 20px;
+    background: white; /* Fundo branco */
+    padding: 20px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Deixa com uma sombra sutil */
+}
+
+/* Botão de novo tópico */
+#newTopic {
+    background: #6a5986; /* Cor do botão */
+    color: white;
+    padding: 10px 15px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer;
+}
+
+/* Formulário de novo post */
+#new-post-form {
+    background: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Campos do formulário */
+#new-post-form input,
+#new-post-form textarea {
+    width: 100%; /* Largura total */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* Deixa com uma borda sutil */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+}
+
+/* Área de texto do formulário */
+#new-post-form textarea {
+    min-height: 100px; /* Altura mínima */
+    resize: vertical; /* Permite que seja redimensinado apenas na vertical */
+}
+
+/* Botões do formulário */
+#new-post-form button {
+    margin-right: 10px; /* Espaço entre os botões */
+}
+
+/* Estilo dos posts */
+.forum-post {
+    border-bottom: 1px solid #ddd; /* Cria uma linha divisória */
+    padding: 15px 0; /* Espaçamento vertical */
+}
+
+/* Ações do post (like, excluir, etc) */
+.post-actions {
+    display: flex;
+    gap: 10px; /* Espaço entre itens */
+    margin-top: 10px;
+}
+
+/* Conteúdo do post */
+.post-content {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9; /* Fundo cinza muito claro */
+    border-left: 3px solid #6a5986; /* Borda lateral roxa */
+    white-space: pre-line; /* Mantém as quebras de linha */
+}
+
+/* Formulário de resposta */
+.reply-form {
+    margin: 15px 0; /* Margem vertical */
+}
+
+/* Área de texto de resposta */
+.reply-form textarea {
+    width: 100%; /* Largura total */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* Deixa com uma borda sutil */
+    border-radius: 5px; /* Bordas arredondadas */
+    resize: vertical; /* Permite que seja redimensionado apenas na vertical */
+    min-height: 80px; /* Altura mínima */
+}
+
+/* Container de respostas */
+.replies-container {
+    margin-top: 15px;
+    border-top: 1px solid #eee; /* Cria uma linha divisória na parte superior */
+    padding-top: 10px;
+}
+
+/* Estilo individual de cada resposta */
+.reply {
+    background-color: #f9f9f9; /* Fundo cinza muito claro */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px; /* Bordas arredondadas */
+    border-left: 3px solid #ddd; /* Borda lateral cinza */
+}
+
+/* Usuario autor da resposta */
+.reply-author {
+    font-weight: bold;
+    color: #6a5986;
+}
+
+/* Data da resposta */
+.reply-date {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Estilo padrão para os botões */
+.vote-btn, .delete-btn, .reply-btn {
+    padding: 5px 10px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+/* Botão de like */
+.vote-btn {
+    background: #6a5986;
+    color: white;
+}
+
+/* Botão de excluir */
+.delete-btn {
+    background: red; 
+    color: white;
+}
+
+/* Botão de responder */
+.reply-btn {
+    background: #6a5986; 
+    color: white; 
+}
+
+/* Efeito hover para os botões de ação */
+.vote-btn:hover, .delete-btn:hover, .reply-btn:hover {
+    opacity: 0.8; /* Leve transparência ao passar o mouse */
+}
+
+/* ----------- RESPONSIVIDADE PARA MOBILE ----------- */
+@media (max-width: 768px) {
+    /* Navbar vertical */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar nav ul li {
+        margin: 10px 0;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    /* Layout principal em coluna */
+    main {
+        flex-direction: column;
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    section {
+        margin-left: 0;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    /* Ações do post em coluna */
+    .post-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Botões mais largos */
+    .vote-btn,
+    .delete-btn,
+    .reply-btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    /* Formulário de novo post */
+    #new-post-form input,
+    #new-post-form textarea {
+        font-size: 16px;
+    }
+
+    /* Botões do formulário */
+    #new-post-form button {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+
+    .reply-form textarea {
+        font-size: 16px;
+    }
+}
